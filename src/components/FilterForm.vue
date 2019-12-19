@@ -1,6 +1,6 @@
 <template>
   <b-form>
-    <VueCtkDateTimePicker :range="true" v-model="params.range"></VueCtkDateTimePicker>
+    <DateTimePicker @datepicked="datePicked"></DateTimePicker>
     <b-form-group
       id="input-group-basename"
       label="Basename"
@@ -11,27 +11,31 @@
         v-model="params.basename"
       ></b-form-input>
     </b-form-group>
-    {{ params }}
+      {{ params }}
     <b-button type="reset">Reset</b-button>
   </b-form>
 </template>
 <script>
-import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
-import moment from 'moment';
-import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
+import DateTimePicker from '@/components/util/DateTimePicker.vue'
 export default {
   name: 'FilterForm',
-  components: {VueCtkDateTimePicker},
+  components: {DateTimePicker},
   data: function(){
     return {
       params: {
         range: {
-          start: moment().format('YYYY-MM-DD'),
-          end: moment().format('YYYY-MM-DD'),
+          start: null,
+          end: null,
         },
         proposal: null,
         basename: null,
       }
+    }
+  },
+  methods: {
+    datePicked: function(v){
+      this.params.range.start = v.start
+      this.params.range.end = v.end
     }
   }
 }

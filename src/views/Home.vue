@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-sm-3">
       <FilterForm></FilterForm>
     </div>
     <div class="col">
