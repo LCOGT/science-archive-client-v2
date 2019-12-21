@@ -11,15 +11,25 @@
         v-model="params.basename"
       ></b-form-input>
     </b-form-group>
+
+    <b-form-group
+      id="input-group-sourcelookup"
+      label="Source Lookup"
+      label-for="input-sourcelookup"
+    >
+      <SourceLookup></SourceLookup>
+    </b-form-group>
+
       {{ params }}
     <b-button type="reset">Reset</b-button>
   </b-form>
 </template>
 <script>
 import DateTimePicker from '@/components/util/DateTimePicker.vue'
+import SourceLookup from '@/components/util/SourceLookup.vue'
 export default {
   name: 'FilterForm',
-  components: {DateTimePicker},
+  components: {DateTimePicker, SourceLookup},
   data: function(){
     return {
       params: {
