@@ -1,3 +1,5 @@
+# Archiving project: This project has been superseded by https://github.com/LCOGT/science-archive-client
+
 # archive-client-v2
 
 ## Project setup
